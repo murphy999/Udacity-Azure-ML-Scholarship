@@ -8,8 +8,8 @@
   <li><a href="https://medium.com/lets-talk-ml/the-trade-off-in-machine-learning-f6b30f38a527?source=---------4------------------">Trade-Off in Machine Learning</a></li>
   
  <h3>Azure-ML HandsOn</h3>
-  <li><strong>Regression Model</strong>:<a href="https://gallery.cortanaintelligence.com/Experiment/Item-Outlet-Sales-Prediction">Item-Outlet Sales Prediction</a></li> 
-  <li><strong>Two-class Clasification Model</strong>:<a href="https://gallery.cortanaintelligence.com/Experiment/Employee-Promotion-Experiment-Mufaddal">Employee Promotion Prediction</a></li> 
+  <li><strong>Regression Model</strong>: <a href="https://gallery.cortanaintelligence.com/Experiment/Item-Outlet-Sales-Prediction">Item-Outlet Sales Prediction</a></li> 
+  <li><strong>Two-class Clasification Model</strong>: <a href="https://gallery.cortanaintelligence.com/Experiment/Employee-Promotion-Experiment-Mufaddal">Employee Promotion Prediction</a></li> 
   
 <h3>Webinar</h3>
     <strong> Feature Engineering </strong>
