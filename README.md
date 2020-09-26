@@ -11,7 +11,7 @@
   <li><strong>Regression Model</strong>: <a href="https://gallery.cortanaintelligence.com/Experiment/Item-Outlet-Sales-Prediction">Item-Outlet Sales Prediction</a></li> 
   <li><strong>Two-class Clasification Model</strong>: <a href="https://gallery.cortanaintelligence.com/Experiment/Employee-Promotion-Experiment-Mufaddal">Employee Promotion Prediction</a></li> 
   
-<h3>Webinar</h3>
+<h3>Webinars</h3>
     <li><strong> Feature Engineering </strong>
     <p>Different Tasks of Feature Engineering</p>
     <ol>
