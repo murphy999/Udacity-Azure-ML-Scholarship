@@ -24,6 +24,7 @@
     </ol>
   <a href="https://drive.google.com/drive/folders/1cay0sYhZ-z_RxFMMJkv39ikjAa7YJ5FX?usp=sharing"><strong>Python Code</strong></a>
         <a href="https://public.tableau.com/profile/max6387#!/vizhome/Recommendation-RFMModel/Trends?publish=yes"><strong>Tableau Dashboard</strong></a></li>
+        <br>
   <li><strong> Intoduction to Data Literacy </strong> - 
   <a href="https://www.slideshare.net/MufaddalHaidermota/data-literacy-237635504"><strong>Presentation</strong></a></li>
   
