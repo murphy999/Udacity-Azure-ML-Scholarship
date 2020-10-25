@@ -10,10 +10,6 @@ import pandas as pd
 from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
-# TODO: Create TabularDataset using TabularDatasetFactory
-# Data is located at:
-# "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
-
 data_link = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
 ds = TabularDatasetFactory.from_delimited_files(path=data_link)
@@ -74,8 +70,10 @@ def main():
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
     
-    os.makedirs('output_model',exist_ok=True)
-    joblib.dump(model,'output_model/model.joblib')
+    os.makedirs('outputs',exist_ok=True)
+    joblib.dump(model,'outputs/model.joblib')
 
 if __name__ == '__main__':
     main()
+
+
