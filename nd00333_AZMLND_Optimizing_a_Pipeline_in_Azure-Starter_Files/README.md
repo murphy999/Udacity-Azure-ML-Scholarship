@@ -7,7 +7,6 @@ This model is then compared to an Azure AutoML run.
 
 ## Summary
 <p>In this project we have used UCI Bank Marketing dataset, which is related with direct marketing campaigns of a Portuguese baking institution. The classification goal is predict if the client will subscribe a term deposit (variable 'y'). <a href="https://archive.ics.uci.edu/ml/datasets/Bank+Marketing"> Read More </a></p>
-<br>
 <p>In this project, we have used scikit-learn Logistic Regression and tuned the hyperparameters(optimal) using HyperDrive. We also used AutoML to build and optimize a model on the same dataset, so that we can compare the results of the two methods.
 The best performing model was obtained through AutoML - <strong> VotingEnsemble </strong> with accuracy of <b>0.9154</b></p>
 
