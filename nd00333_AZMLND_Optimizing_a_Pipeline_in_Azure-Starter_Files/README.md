@@ -34,10 +34,11 @@ The best performing model was obtained through AutoML - <strong> VotingEnsemble 
   <li>Save the trained optimized model</li>
 </ol>
 <img src = 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_Optimizing_a_Pipeline_in_Azure-Starter_Files/images/hyperdrive%20runs.PNG'>
-**Parameter Sampler**
+
+<strong>Parameter Sampler</strong>
 <p>The parameter sampler I chose was <i>RandomParameterSampling</i> because it supports both discrete and continuous hyperparameters. It supports early termination of low-performance runs and supports early stopping policies. In random sampling , the hyperparameter (C : smaller values specify stronger regularization, max_iter : maximum number of iterations taken for the solvers to converge) values are randomly selected from the defined search space. </p>
-<br>
-**Early Stopping Policy**
+
+<strong>Early Stopping Policy</strong>
 <p> The early stopping policy I chose was <i>BanditPolicy</i> because it is based on slack factor and evaluation interval. Bandit terminates runs where the primary metric is not within the specified slack factor compared to the best performing run. <a href = 'https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy?view=azure-ml-py&preserve-view=true#&preserve-view=truedefinition'>Read More</a></p>
 
 ## AutoML
@@ -49,7 +50,7 @@ The best performing model was obtained through AutoML - <strong> VotingEnsemble 
   <li> Save the best model generated </li>
 </ol>
 <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_Optimizing_a_Pipeline_in_Azure-Starter_Files/images/AutoML_models.PNG'>
-<p> The below snapshots shows the best model explanations i.e. which features has comparatively higher importance in classification and also show the best model metrics. </p>
+<p> The below snapshots gives the explanation of the best model prediction by highlighting feature importance values and discovering patterns in data at training time. It also shows differnt metrics and their value for model interpretability and explanation. </p>
 <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_Optimizing_a_Pipeline_in_Azure-Starter_Files/images/voting_ensembe%20-%20I.PNG'>
 <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_Optimizing_a_Pipeline_in_Azure-Starter_Files/images/voting_ensembe%20-%20II.PNG'>
 <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_Optimizing_a_Pipeline_in_Azure-Starter_Files/images/automl_metric.png'>
