@@ -34,6 +34,7 @@ The best performing model was obtained through AutoML - <strong> VotingEnsemble 
   </li><br>  
   <li>Save the trained optimized model</li>
 </ol>
+<p>As specified above, we have used logistic regression model for our binary classification problem and hyperdrive tool to choose the best hyperparameter values from the parameter search space. Under the hood logistic regression uses logistic/sigmoidal function to estimate the probabilities between the dependent/target variable and one or more independent variables(features). In the below image, we can see that which hyperdrive run gave the best result.</p>
 <img src = 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_Optimizing_a_Pipeline_in_Azure-Starter_Files/images/hyperdrive_runs.PNG'>
 
 <strong>Parameter Sampler</strong>
