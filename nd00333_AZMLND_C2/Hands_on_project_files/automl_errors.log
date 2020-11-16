@@ -1,0 +1,99 @@
+2020-11-14 11:18:03.002 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:199 - Package azureml-train-automl missing from dependencies file.
+2020-11-14 11:18:03.004 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:205 - Using pinned version: azureml-train-automl==1.18.0.*
+2020-11-14 11:18:03.004 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:199 - Package pandas missing from dependencies file.
+2020-11-14 11:18:03.005 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:205 - Using pinned version: pandas==0.25.1
+2020-11-14 11:18:03.006 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:199 - Package psutil missing from dependencies file.
+2020-11-14 11:18:03.006 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:205 - Using pinned version: psutil>5.0.0,<6.0.0
+2020-11-14 11:18:03.006 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:199 - Package scikit-learn missing from dependencies file.
+2020-11-14 11:18:03.008 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:205 - Using pinned version: scikit-learn==0.22.1
+2020-11-14 11:18:03.016 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:199 - Package numpy missing from dependencies file.
+2020-11-14 11:18:03.016 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:205 - Using pinned version: numpy~=1.18.0
+2020-11-14 11:18:03.016 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:199 - Package py-xgboost missing from dependencies file.
+2020-11-14 11:18:03.017 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:205 - Using pinned version: py-xgboost<=0.90
+2020-11-14 11:18:03.018 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:199 - Package inference-schema missing from dependencies file.
+2020-11-14 11:18:03.019 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:199 - Package fbprophet missing from dependencies file.
+2020-11-14 11:18:03.019 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:205 - Using pinned version: fbprophet==0.5
+2020-11-14 11:18:03.021 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:199 - Package setuptools-git missing from dependencies file.
+2020-11-14 11:18:03.021 - INFO - 5401 - azureml.train.automl._azureautomlclient.modify_run_configuration:209 - Using installed version: setuptools-git==1.2
+2020-11-14 11:18:03.034 - INFO - 5401 - azureml.automl.core.dataset_utilities._save_datasets_to_json:148 - JSON serialization of input of type <class 'NoneType'> is un-supported.
+2020-11-14 11:18:03.036 - INFO - 5401 - azureml.train.automl._azureautomlclient._validate_input:625 - Start data validation.
+2020-11-14 11:18:03.071 - CRITICAL - 5401 - azureml.train.automl._azureautomlclient.log_traceback:222 - Type: Unclassified
+Class: ValueError
+Message: experiment_id should not be None.
+Traceback:
+  File "_azureautomlclient.py", line 632, in _validate_input
+    validation_results = self._jasmine_client.post_validate_service(parent_run_dto)
+  File "jasmine_client.py", line 59, in post_validate_service
+    self._client.jasmine.validate_run_input, create_parent_run_dto)
+  File "experiment_client.py", line 261, in _execute_with_experimentid_arguments
+    raise ValueError("experiment_id should not be None.")
+
+ExceptionTarget: Unspecified
+2020-11-14 11:18:03.071 - WARNING - 5401 - azureml.train.automl._azureautomlclient._validate_input:640 - Validation service meet exceptions, continue training now.
+2020-11-14 11:56:10.562 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Feature sweeping enabled: False
+2020-11-14 11:56:10.562 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Feature sweeping timeout: 86400
+2020-11-14 11:56:10.564 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Feature sweeping enabled: False
+2020-11-14 11:56:10.564 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Feature sweeping timeout: 86400
+2020-11-14 11:56:33.360 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Starting to apply transforms. Total ram: 29504061440 bytes
+2020-11-14 11:56:33.362 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26764374016 bytes
+2020-11-14 11:56:33.362 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Applying transform.
+2020-11-14 11:56:33.374 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Finished applying transform. Shape (32950, 1)
+2020-11-14 11:56:33.374 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26764374016 bytes
+2020-11-14 11:56:33.375 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Applying transform.
+2020-11-14 11:56:33.378 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Finished applying transform. Shape (32950, 1)
+2020-11-14 11:56:33.378 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26764374016 bytes
+2020-11-14 11:56:33.378 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Applying transform.
+2020-11-14 11:56:33.381 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Finished applying transform. Shape (32950, 1)
+2020-11-14 11:56:33.382 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26764374016 bytes
+2020-11-14 11:56:33.382 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Applying transform.
+2020-11-14 11:56:33.385 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Finished applying transform. Shape (32950, 1)
+2020-11-14 11:56:33.386 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26764120064 bytes
+2020-11-14 11:56:33.386 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Applying transform.
+2020-11-14 11:56:33.389 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Finished applying transform. Shape (32950, 1)
+2020-11-14 11:56:33.389 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26763833344 bytes
+2020-11-14 11:56:33.390 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Applying transform.
+2020-11-14 11:56:33.392 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Finished applying transform. Shape (32950, 1)
+2020-11-14 11:56:33.392 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26763579392 bytes
+2020-11-14 11:56:33.392 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Applying transform.
+2020-11-14 11:56:33.394 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - SimpleImputer: Finished applying transform. Shape (32950, 1)
+2020-11-14 11:56:33.394 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26763325440 bytes
+2020-11-14 11:56:33.394 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:33.515 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 12)
+2020-11-14 11:56:33.516 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26761420800 bytes
+2020-11-14 11:56:33.516 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:33.620 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 4)
+2020-11-14 11:56:33.620 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26761166848 bytes
+2020-11-14 11:56:33.621 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:33.722 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 8)
+2020-11-14 11:56:33.723 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26761166848 bytes
+2020-11-14 11:56:33.723 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:33.824 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 3)
+2020-11-14 11:56:33.825 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26760912896 bytes
+2020-11-14 11:56:33.825 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:33.924 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 3)
+2020-11-14 11:56:33.924 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26760912896 bytes
+2020-11-14 11:56:33.924 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:34.026 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 3)
+2020-11-14 11:56:34.026 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26760531968 bytes
+2020-11-14 11:56:34.026 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - CatImputer,StringCastTransformer,LabelEncoderTransformer: Applying transform.
+2020-11-14 11:56:34.050 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - CatImputer,StringCastTransformer,LabelEncoderTransformer: Finished applying transform. Shape (32950, 1)
+2020-11-14 11:56:34.051 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26759008256 bytes
+2020-11-14 11:56:34.051 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:34.168 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 10)
+2020-11-14 11:56:34.169 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26758881280 bytes
+2020-11-14 11:56:34.169 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:34.271 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 5)
+2020-11-14 11:56:34.272 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26758627328 bytes
+2020-11-14 11:56:34.272 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:34.390 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 39)
+2020-11-14 11:56:34.391 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26758553600 bytes
+2020-11-14 11:56:34.391 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:34.509 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 26)
+2020-11-14 11:56:34.510 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26758553600 bytes
+2020-11-14 11:56:34.510 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:34.645 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 8)
+2020-11-14 11:56:34.646 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Transform memory estimate: 0 bytes, Current available memory: 26758705152 bytes
+2020-11-14 11:56:34.646 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Applying transform.
+2020-11-14 11:56:34.752 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - StringCastTransformer,CountVectorizer: Finished applying transform. Shape (32950, 3)
+2020-11-14 11:56:34.752 - INFO - 5401 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Finished applying transforms
+2020-11-14 11:56:34.753 - INFO - 5401 - azureml.automl.runtime.shared.memory_utilities._is_low_memory:208 - Total ram: 29504061440 bytes, Current Available memory: 26758848512 bytes. Low memory threshold: 0.5
