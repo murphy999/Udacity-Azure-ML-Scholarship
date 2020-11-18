@@ -16,6 +16,14 @@ In this project, we have used <a href= 'https://automlsamplenotebookdata.blob.co
 </ol>
 </p>
 
+### Future Work
+
+<p> The project can be further improved by:
+  <ul>
+    <li> creating an interactive frontend to display the deployed models prediction result instead of showing on git bash </li>
+    <li> get more user for testing so as to get service insights through <i> application insights </i> </li>
+  </ul>
+</p>
 
 ## Key Steps
 
@@ -38,12 +46,17 @@ In this project, we have used <a href= 'https://automlsamplenotebookdata.blob.co
       <li> we have also enabled application insights to track the request received by the model enpoint and its performance and usage details and </li>
       <li> we have enabled the logging feature to capture the logs and check them, when required. </li>
     </ul>
-    Also, we have used swagger tool that helps build, document, and consume RESTful web services like the ones we have deployed.It further explains what types of HTTP requests       that an API can consume, like POST and GET. Azure provides a swagger.json that is used to create a web site that documents the HTTP endpoint for a deployed model.
   </p>
   <p float="left">
     <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_C2/imgs/Model-deployment%20-consumption/deployed_endpoint_details.PNG'       width="70%" /><br>
     <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_C2/imgs/Model-deployment%20-consumption/logs_enabled.PNG' width="50%" />
     <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_C2/imgs/Model-deployment%20-consumption/swagger1.PNG' width="40%" /><br>
+    <p></p>
+    <p> Also, we have used swagger tool that helps build, document, and consume RESTful web services like the ones we have deployed.It further explains what types of HTTP               requests that an API can consume, like POST and GET. Azure provides a swagger.json that is used to create a web site that documents the HTTP endpoint for a deployed             model.
+    </p>
+    <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_C2/imgs/POST.png' width="70%" />
+    <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_C2/imgs/GET_Response.PNG' width="70%" /><br>
+    <p></p>
     <p> In the below image, we can notice that we have run the <i>endpoint.py</i> file which contains rest endpoint url to interact with the deployed model and key value for             authentication and two sample data points in JSON format.
     <img src= 'https://github.com/murphy999/Udacity-Azure-ML-Scholarship/blob/master/nd00333_AZMLND_C2/imgs/Model-deployment%20-consumption/endpoint_output.PNG' width="50%" />
   </p>
