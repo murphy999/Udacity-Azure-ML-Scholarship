@@ -1,0 +1,34 @@
+System.InvalidOperationException:
+job failed with message: 'DockerDesktopVM' failed to restore. (Virtual machine ID AD47C4C5-1E83-47FB-9FEB-3AC42131284F)
+
+The virtual machine 'DockerDesktopVM' is using processor-specific features not supported on physical computer 'labvm'. To allow for migration of this virtual machine to physical computers with different processors, modify the virtual machine settings to limit the processor features used by the virtual machine. (Virtual machine ID AD47C4C5-1E83-47FB-9FEB-3AC42131284F)
+   at Docker.Backend.HyperVInfrastructure.HandleUpdatedJob(CIMConcreteJob updatedJob) in C:\workspaces\stable-2.4.x\src\github.com\docker\pinata\win\src\Docker.Backend\HyperV\HyperVInfrastructure.cs:line 810
+   at Docker.Backend.HyperVInfrastructure.<HandleMaybeAsyncJob>d__38.MoveNext() in C:\workspaces\stable-2.4.x\src\github.com\docker\pinata\win\src\Docker.Backend\HyperV\HyperVInfrastructure.cs:line 744
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.Backend.HyperVInfrastructure.<StartVMAsync>d__30.MoveNext() in C:\workspaces\stable-2.4.x\src\github.com\docker\pinata\win\src\Docker.Backend\HyperV\HyperVInfrastructure.cs:line 592
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.Backend.HyperV.<StartAsync>d__7.MoveNext() in C:\workspaces\stable-2.4.x\src\github.com\docker\pinata\win\src\Docker.Backend\HyperV\HyperV.cs:line 101
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.Backend.HttpAPI.HyperVController.<StartAsync>d__8.MoveNext() in C:\workspaces\stable-2.4.x\src\github.com\docker\pinata\win\src\Docker.Backend\HttpAPI\HyperVController.cs:line 44
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()
