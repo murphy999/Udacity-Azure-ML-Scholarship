@@ -19,16 +19,29 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 data_link = "https://raw.githubusercontent.com/murphy999/Udacity-Azure-ML-Scholarship/master/nd00333-capstone/starter_file/Telco-Customer-Churn.csv"
 ds = TabularDatasetFactory.from_delimited_files(path=data_link)
 
+# +
+from azureml.core import Workspace, Dataset
+subscription_id = '8a56ebc5-caa7-4a43-b8ed-1c1895e46051'
+resource_group = 'aml-quickstarts-130590'
+workspace_name = 'quick-starts-ws-130590'
+wrkspace = Workspace(subscription_id,resource_group,workspace_name)
+
+temp = Dataset.get_by_name(wrkspace, name='customer')
+datatset = temp.to_pandas_dataframe()
+
+
+# -
+
 def clean_data(data):
     
     # Clean and one hot encode data
     df = data.to_pandas_dataframe().dropna()
     df['TotalCharges'] = pd.to_numeric(df.TotalCharges, errors='coerce')
 
-    df['Partner'] = df.Partner.apply(lambda s: 1 if s == "Yes" else 0)
-    df['Dependents'] = df.Dependents.apply(lambda s: 1 if s == "Yes" else 0)
-    df['PaperlessBilling'] = df.PaperlessBilling.apply(lambda s: 1 if s == "Yes" else 0)
-    df['PhoneService'] = df.PhoneService.apply(lambda s: 1 if s == "Yes" else 0)
+    #df['Partner'] = df.Partner.apply(lambda s: 1 if s == true else 0)
+    #df['Dependents'] = df.Dependents.apply(lambda s: 1 if s == "Yes" else 0)
+    #df['PaperlessBilling'] = df.PaperlessBilling.apply(lambda s: 1 if s == "Yes" else 0)
+    #df['PhoneService'] = df.PhoneService.apply(lambda s: 1 if s == "Yes" else 0)
     df['MultipleLines'] = df.MultipleLines.apply(lambda s: 1 if s == "Yes" else 0)
     df['OnlineSecurity'] = df.OnlineSecurity.apply(lambda s: 1 if s == "Yes" else 0)
     df['OnlineBackup'] = df.OnlineBackup.apply(lambda s: 1 if s == "Yes" else 0)
@@ -36,18 +49,17 @@ def clean_data(data):
     df['TechSupport'] = df.TechSupport.apply(lambda s: 1 if s == "Yes" else 0)
     df['StreamingMovies'] = df.StreamingMovies.apply(lambda s: 1 if s == "Yes" else 0)
     df['StreamingTV'] = df.StreamingTV.apply(lambda s: 1 if s == "Yes" else 0)
+    y_df = df.pop("Churn")
     
     df = pd.get_dummies(df,columns=['gender'],drop_first= True)
     df = pd.get_dummies(df,columns=['InternetService'],drop_first= True)
     df = pd.get_dummies(df,columns=['PaymentMethod'],drop_first= False)
     df = pd.get_dummies(df,columns=['Contract'],drop_first= True)
-
-    y_df = df.pop("Churn").apply(lambda s: 1 if s == "Yes" else 0)
     
     return df,y_df
 
 run = Run.get_context()
-    
+
 def main():
     # Add arguments to script
     parser = argparse.ArgumentParser()
@@ -58,7 +70,7 @@ def main():
 
     args = parser.parse_args()
 
-    x, y = clean_data(ds)
+    x, y = clean_data(dataset)
 
     # TODO: Split data into train and test sets.
     x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.3,random_state=53)
@@ -66,7 +78,7 @@ def main():
     model = RandomForestClassifier(n_estimators=args.n_estimators, max_depth=args.max_depth, min_samples_split=args.min_samples_split).fit(x_train, y_train)
 
     accuracy = model.score(x_test, y_test)
-    run.log("Accuracy", np.float(accuracy))
+    run.log("Accuracy", float(accuracy))
     
     joblib.dump(model,'./model.joblib')
 
