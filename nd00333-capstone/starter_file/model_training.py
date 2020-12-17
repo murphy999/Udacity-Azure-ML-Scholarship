@@ -16,14 +16,15 @@ import joblib
 from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
-data_link = "https://raw.githubusercontent.com/murphy999/Udacity-Azure-ML-Scholarship/master/nd00333-capstone/starter_file/Telco-Customer-Churn.csv"
-ds = TabularDatasetFactory.from_delimited_files(path=data_link)
+# +
+#data_link = "https://raw.githubusercontent.com/murphy999/Udacity-Azure-ML-Scholarship/master/nd00333-capstone/starter_file/Telco-Customer-Churn.csv"
+#ds = TabularDatasetFactory.from_delimited_files(path=data_link)
 
 # +
 from azureml.core import Workspace, Dataset
-subscription_id = '8a56ebc5-caa7-4a43-b8ed-1c1895e46051'
-resource_group = 'aml-quickstarts-130590'
-workspace_name = 'quick-starts-ws-130590'
+subscription_id = 'de8aba62-c352-42be-b980-2faedf08ead8'
+resource_group = 'aml-quickstarts-130769'
+workspace_name = 'quick-starts-ws-130769'
 wrkspace = Workspace(subscription_id,resource_group,workspace_name)
 
 temp = Dataset.get_by_name(wrkspace, name='customer')
@@ -36,12 +37,12 @@ def clean_data(data):
     
     # Clean and one hot encode data
     df = data.to_pandas_dataframe().dropna()
-    df['TotalCharges'] = pd.to_numeric(df.TotalCharges, errors='coerce')
+    #df['TotalCharges'] = pd.to_numeric(df.TotalCharges, errors='coerce')
 
-    #df['Partner'] = df.Partner.apply(lambda s: 1 if s == true else 0)
-    #df['Dependents'] = df.Dependents.apply(lambda s: 1 if s == "Yes" else 0)
-    #df['PaperlessBilling'] = df.PaperlessBilling.apply(lambda s: 1 if s == "Yes" else 0)
-    #df['PhoneService'] = df.PhoneService.apply(lambda s: 1 if s == "Yes" else 0)
+    df['Partner'] = df.Partner.apply(lambda s: 1 if s == True else 0)
+    df['Dependents'] = df.Dependents.apply(lambda s: 1 if s == True else 0)
+    df['PaperlessBilling'] = df.PaperlessBilling.apply(lambda s: 1 if s == True else 0)
+    df['PhoneService'] = df.PhoneService.apply(lambda s: 1 if s == True else 0)
     df['MultipleLines'] = df.MultipleLines.apply(lambda s: 1 if s == "Yes" else 0)
     df['OnlineSecurity'] = df.OnlineSecurity.apply(lambda s: 1 if s == "Yes" else 0)
     df['OnlineBackup'] = df.OnlineBackup.apply(lambda s: 1 if s == "Yes" else 0)
@@ -49,12 +50,13 @@ def clean_data(data):
     df['TechSupport'] = df.TechSupport.apply(lambda s: 1 if s == "Yes" else 0)
     df['StreamingMovies'] = df.StreamingMovies.apply(lambda s: 1 if s == "Yes" else 0)
     df['StreamingTV'] = df.StreamingTV.apply(lambda s: 1 if s == "Yes" else 0)
-    y_df = df.pop("Churn")
     
     df = pd.get_dummies(df,columns=['gender'],drop_first= True)
     df = pd.get_dummies(df,columns=['InternetService'],drop_first= True)
     df = pd.get_dummies(df,columns=['PaymentMethod'],drop_first= False)
     df = pd.get_dummies(df,columns=['Contract'],drop_first= True)
+    
+    y_df = df.pop("Churn").apply(lambda s: 1 if s == True else 0)
     
     return df,y_df
 
