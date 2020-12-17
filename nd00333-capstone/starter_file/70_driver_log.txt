@@ -1,0 +1,256 @@
+2020/12/17 06:40:14 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/info
+2020/12/17 06:40:14 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/status
+[2020-12-17T06:40:15.863098] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['model_training.py', '--max_depth', '5', '--min_samples_split', '4', '--n_estimators', '250'])
+Script type = None
+Starting the daemon thread to refresh tokens in background for process with pid = 103
+Entering Run History Context Manager.
+[2020-12-17T06:40:18.751942] Current directory: /mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0
+[2020-12-17T06:40:18.752123] Preparing to call script [model_training.py] with arguments:['--max_depth', '5', '--min_samples_split', '4', '--n_estimators', '250']
+[2020-12-17T06:40:18.752203] After variable expansion, calling script [model_training.py] with arguments:['--max_depth', '5', '--min_samples_split', '4', '--n_estimators', '250']
+
+Performing interactive authentication. Please follow the instructions on the terminal.
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code E7ARBXC5N to authenticate.
+Starting the daemon thread to refresh tokens in background for process with pid = 103
+
+
+[2020-12-17T06:55:37.408758] The experiment failed. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+1 items cleaning up...
+Cleanup took 0.06204080581665039 seconds
+[2020-12-17T06:55:37.635674] Logging warning in history service: ERROR:: RunHistoryFinalization  failed. . Exception Details:Traceback (most recent call last):
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 579, in perform_interactive_login
+    use_cert_sn_issuer=use_cert_sn_issuer)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_vendor/azure_cli_core/_profile.py", line 228, in find_subscriptions_on_login
+    tenant, self._ad_resource_uri)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_vendor/azure_cli_core/_profile.py", line 786, in find_through_interactive_flow
+    token_entry = context.acquire_token_with_device_code(resource, code, _CLIENT_ID)
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/authentication_context.py", line 311, in acquire_token_with_device_code
+    return self._acquire_token(token_func, user_code_info.get('correlation_id', None))
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/authentication_context.py", line 128, in _acquire_token
+    return token_func(self)
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/authentication_context.py", line 304, in token_func
+    token = token_request.get_token_with_device_code(user_code_info)
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/token_request.py", line 392, in get_token_with_device_code
+    token = client.get_token_with_polling(oauth_parameters, interval, expires_in)
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/oauth2_client.py", line 362, in get_token_with_polling
+    wire_response)
+adal.adal_error.AdalError: Unexpected polling state code_expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_manager_injector.py", line 201, in execute_with_context
+    runpy.run_path(sys.argv[0], globals(), run_name="__main__")
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "model_training.py", line 28, in <module>
+    wrkspace = Workspace(subscription_id,resource_group,workspace_name)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/workspace.py", line 178, in __init__
+    auth = InteractiveLoginAuthentication()
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/authentication.py", line 414, in __init__
+    perform_interactive_login(tenant=tenant_id, cloud_type=self._cloud_type)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 589, in perform_interactive_login
+    raise AuthenticationException(err)
+azureml.exceptions._azureml_exception.AuthenticationException: <unprintable AuthenticationException object>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_manager_injector.py", line 235, in execute_with_context
+    raise UserScriptException(baseEx).with_traceback(exceptionInfo[2])
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_manager_injector.py", line 201, in execute_with_context
+    runpy.run_path(sys.argv[0], globals(), run_name="__main__")
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "model_training.py", line 28, in <module>
+    wrkspace = Workspace(subscription_id,resource_group,workspace_name)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/workspace.py", line 178, in __init__
+    auth = InteractiveLoginAuthentication()
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/authentication.py", line 414, in __init__
+    perform_interactive_login(tenant=tenant_id, cloud_type=self._cloud_type)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 589, in perform_interactive_login
+    raise AuthenticationException(err)
+UserScriptException: <unprintable UserScriptException object>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_managers.py", line 312, in __exit__
+    self.history_context.__exit__(*args)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_history/utils/context_managers.py", line 56, in __exit__
+    return self._exit_stack.__exit__(*args)
+  File "/opt/miniconda/lib/python3.6/contextlib.py", line 380, in __exit__
+    raise exc_details[1]
+  File "/opt/miniconda/lib/python3.6/contextlib.py", line 365, in __exit__
+    if cb(*exc_details):
+  File "/opt/miniconda/lib/python3.6/contextlib.py", line 284, in _exit_wrapper
+    return cm_exit(cm, *exc_details)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_history/utils/log_scope.py", line 30, in __exit__
+    self._logger.error("{0}: {1}\n{2}".format(etype, value, traceback))
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_common/exceptions.py", line 116, in __str__
+    return self.__repr__()
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_common/exceptions.py", line 112, in __repr__
+    self._serialize_json(indent=4))
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_common/exceptions.py", line 183, in _serialize_json
+    return json.dumps(error_ret, indent=indent)
+  File "/opt/miniconda/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'AdalError' is not JSON serializable
+
+Traceback (most recent call last):
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 579, in perform_interactive_login
+    use_cert_sn_issuer=use_cert_sn_issuer)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_vendor/azure_cli_core/_profile.py", line 228, in find_subscriptions_on_login
+    tenant, self._ad_resource_uri)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_vendor/azure_cli_core/_profile.py", line 786, in find_through_interactive_flow
+    token_entry = context.acquire_token_with_device_code(resource, code, _CLIENT_ID)
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/authentication_context.py", line 311, in acquire_token_with_device_code
+    return self._acquire_token(token_func, user_code_info.get('correlation_id', None))
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/authentication_context.py", line 128, in _acquire_token
+    return token_func(self)
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/authentication_context.py", line 304, in token_func
+    token = token_request.get_token_with_device_code(user_code_info)
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/token_request.py", line 392, in get_token_with_device_code
+    token = client.get_token_with_polling(oauth_parameters, interval, expires_in)
+  File "/opt/miniconda/lib/python3.6/site-packages/adal/oauth2_client.py", line 362, in get_token_with_polling
+    wire_response)
+adal.adal_error.AdalError: Unexpected polling state code_expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_manager_injector.py", line 201, in execute_with_context
+    runpy.run_path(sys.argv[0], globals(), run_name="__main__")
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "model_training.py", line 28, in <module>
+    wrkspace = Workspace(subscription_id,resource_group,workspace_name)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/workspace.py", line 178, in __init__
+    auth = InteractiveLoginAuthentication()
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/authentication.py", line 414, in __init__
+    perform_interactive_login(tenant=tenant_id, cloud_type=self._cloud_type)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 589, in perform_interactive_login
+    raise AuthenticationException(err)
+azureml.exceptions._azureml_exception.AuthenticationException: <unprintable AuthenticationException object>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_manager_injector.py", line 235, in execute_with_context
+    raise UserScriptException(baseEx).with_traceback(exceptionInfo[2])
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_manager_injector.py", line 201, in execute_with_context
+    runpy.run_path(sys.argv[0], globals(), run_name="__main__")
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/opt/miniconda/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "model_training.py", line 28, in <module>
+    wrkspace = Workspace(subscription_id,resource_group,workspace_name)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/workspace.py", line 178, in __init__
+    auth = InteractiveLoginAuthentication()
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/authentication.py", line 414, in __init__
+    perform_interactive_login(tenant=tenant_id, cloud_type=self._cloud_type)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 589, in perform_interactive_login
+    raise AuthenticationException(err)
+UserScriptException: <unprintable UserScriptException object>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "model_training.py", line 28, in <module>
+    wrkspace = Workspace(subscription_id,resource_group,workspace_name)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/workspace.py", line 178, in __init__
+    auth = InteractiveLoginAuthentication()
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/core/authentication.py", line 414, in __init__
+    perform_interactive_login(tenant=tenant_id, cloud_type=self._cloud_type)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 589, in perform_interactive_login
+    raise AuthenticationException(err)
+UserScriptException: <unprintable UserScriptException object>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_manager_injector.py", line 374, in <module>
+    execute_with_context(cm_objects, options.invocation)
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_manager_injector.py", line 256, in execute_with_context
+    print("Error occurred when setting run status to Finalizing: {}".format(ex))
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/_vendor_contextlib2.py", line 393, in __exit__
+    _reraise_with_existing_context(exc_details)
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/_vendor_contextlib2.py", line 261, in _reraise_with_existing_context
+    raise exc_details[1]
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/_vendor_contextlib2.py", line 382, in __exit__
+    if cb(*exc_details):
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/_vendor_contextlib2.py", line 314, in _exit_wrapper
+    return cm_exit(cm, *exc_details)
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_manager_injector.py", line 70, in __exit__
+    self.context_manager.__exit__(*exc_details)
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-130769/azureml/hd_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/mounts/workspaceblobstore/azureml/HD_65551c87-3ce1-4c4e-8273-9c615d94f8ae_0/azureml-setup/context_managers.py", line 312, in __exit__
+    self.history_context.__exit__(*args)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_history/utils/context_managers.py", line 56, in __exit__
+    return self._exit_stack.__exit__(*args)
+  File "/opt/miniconda/lib/python3.6/contextlib.py", line 380, in __exit__
+    raise exc_details[1]
+  File "/opt/miniconda/lib/python3.6/contextlib.py", line 365, in __exit__
+    if cb(*exc_details):
+  File "/opt/miniconda/lib/python3.6/contextlib.py", line 284, in _exit_wrapper
+    return cm_exit(cm, *exc_details)
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_history/utils/log_scope.py", line 30, in __exit__
+    self._logger.error("{0}: {1}\n{2}".format(etype, value, traceback))
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_common/exceptions.py", line 116, in __str__
+    return self.__repr__()
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_common/exceptions.py", line 112, in __repr__
+    self._serialize_json(indent=4))
+  File "/opt/miniconda/lib/python3.6/site-packages/azureml/_common/exceptions.py", line 183, in _serialize_json
+    return json.dumps(error_ret, indent=indent)
+  File "/opt/miniconda/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/opt/miniconda/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'AdalError' is not JSON serializable
+
+[2020-12-17T06:55:37.789998] Finished context manager injector with Exception.
+2020/12/17 06:55:38 Failed to run the wrapper cmd with err: exit status 1
+2020/12/17 06:55:38 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/status
+2020/12/17 06:55:38 mpirun version string: {
+Intel(R) MPI Library for Linux* OS, Version 2018 Update 3 Build 20180411 (id: 18329)
+Copyright 2003-2018 Intel Corporation.
+}
+2020/12/17 06:55:38 MPI publisher: intel ; version: 2018
+2020/12/17 06:55:38 Process Exiting with Code:  1
