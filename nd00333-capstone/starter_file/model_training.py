@@ -16,21 +16,19 @@ import joblib
 from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
+data_link = "https://raw.githubusercontent.com/murphy999/Udacity-Azure-ML-Scholarship/master/nd00333-capstone/starter_file/Telco-Customer-Churn.csv"
+ds = TabularDatasetFactory.from_delimited_files(path=data_link)
+
+
 # +
-#data_link = "https://raw.githubusercontent.com/murphy999/Udacity-Azure-ML-Scholarship/master/nd00333-capstone/starter_file/Telco-Customer-Churn.csv"
-#ds = TabularDatasetFactory.from_delimited_files(path=data_link)
+#from azureml.core import Workspace, Dataset
+#subscription_id = 'de8aba62-c352-42be-b980-2faedf08ead8'
+#resource_group = 'aml-quickstarts-130769'
+#workspace_name = 'quick-starts-ws-130769'
+#wrkspace = Workspace(subscription_id,resource_group,workspace_name)
 
-# +
-from azureml.core import Workspace, Dataset
-subscription_id = 'de8aba62-c352-42be-b980-2faedf08ead8'
-resource_group = 'aml-quickstarts-130769'
-workspace_name = 'quick-starts-ws-130769'
-wrkspace = Workspace(subscription_id,resource_group,workspace_name)
-
-temp = Dataset.get_by_name(wrkspace, name='customer')
-datatset = temp.to_pandas_dataframe()
-
-
+#temp = Dataset.get_by_name(wrkspace, name='customer')
+#datatset = temp.to_pandas_dataframe()
 # -
 
 def clean_data(data):
@@ -72,7 +70,7 @@ def main():
 
     args = parser.parse_args()
 
-    x, y = clean_data(dataset)
+    x, y = clean_data(ds)
 
     # TODO: Split data into train and test sets.
     x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.3,random_state=53)
@@ -82,7 +80,7 @@ def main():
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", float(accuracy))
     
-    joblib.dump(model,'./model.joblib')
+    joblib.dump(model,'outputs/model.joblib')
 
 if __name__ == '__main__':
     main()
