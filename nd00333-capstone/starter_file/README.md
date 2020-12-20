@@ -1,6 +1,4 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
-
-# Your Project Title Here
+# Predict Customer Churn
 
 *TODO:* Write a short introduction to your project.
 
@@ -8,6 +6,14 @@
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
 
 ## Dataset
+<p> Each row represents a customer, each column contains customer’s attributes described on the column Metadata. The data set includes information about:
+  <ol>
+    <li> Customers who left within the last month – the column is called Churn. </li>
+    <li> Services that each customer has signed up for – phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and                                                            movies. </li>
+    <li> Customer account information – how long they’ve been a customer, contract, payment method, paperless billing, monthly charges, and total charges. </li>
+    <li> Demographic info about customers – gender and if they have partners and dependents. </li>
+  </ol>
+</p>
 
 ### Overview
 *TODO*: Explain about the data you are using and where you got it from.
