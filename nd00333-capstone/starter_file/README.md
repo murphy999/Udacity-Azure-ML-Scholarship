@@ -1,5 +1,5 @@
 # Predict Customer Churn
-The project uses [Telco Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn) in azure workspace to train models using the different tools and         features (Hyperdrive and AutoML)available in the AzureML framework and deploy the best machine learning model as a web service using python sdk.
+The project uses [Telco Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn) in azure workspace to train models using the different tools and         features (Hyperdrive and AutoML) available in the AzureML framework and deploy the best machine learning model as a web service using python sdk.
 
 ## Project Architecture
 ![Architecture](snips/architecture.png)
@@ -46,7 +46,6 @@ The dataset is accessed directly from github using Azure's [TabularDatasetFactor
 <p>The below snapshot shows different metrics of <b>Voting Ensemble model</b> (best automl model). We can see that the accuracy of the best model is approximately <b>81%</b> </p>
 
 ![AutoML Metrics](snips/automl-best-metrics.png)
-
 ## Hyperparameter Tuning
 <p> The machine learning model I have chosen to go along with hyperdrive is <b>Random Forest</b> model. In random forest, we end up with trees that are not only trained on           different sets of data (thanks to bagging) but also use different features to make decisions.
   Some of the hyperdrive configuration done for this classification task are:
@@ -65,14 +64,12 @@ The dataset is accessed directly from github using Azure's [TabularDatasetFactor
 <p>The below snapshot shows different runs with different parameters values in hyperparameter search space. </p>
 
 ![Hyperdrive Runs](snips/hyperdrive-runs.PNG)
-
 ## Model Deployment
 <p>The below snapshot shows active web service endpoint that is use to access the deployed machine learning model.</p>
 
 ![Web Service](snips/web-service.png)
-
 ## Screen Recording
 [![Capstone Project](https://i9.ytimg.com/vi/Ld2U66pn2ZM/mq2.jpg?sqp=CJSN_v4F&rs=AOn4CLDNmNvC6W3UNEEiqk87idmEQZZE_Q)](https://youtu.be/Ld2U66pn2ZM)
 
 ## Standout Suggestions
-<p>in this deployment I have enabled <b>Application Insight</b> which helps in logging and monitoring of web service and its related details.</p>
+<p>In this deployment I have enabled <b>Application Insight</b> which helps in logging and monitoring of web service and its related details.</p>
