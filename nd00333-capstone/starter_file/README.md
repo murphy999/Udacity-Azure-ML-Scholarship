@@ -78,7 +78,13 @@ The dataset is accessed directly from github using Azure's [TabularDatasetFactor
 ![Web Service](snips/web-service.png)
 
 ## Screen Recording
-[![Capstone Project](https://i9.ytimg.com/vi/Ld2U66pn2ZM/mq2.jpg?sqp=CJSN_v4F&rs=AOn4CLDNmNvC6W3UNEEiqk87idmEQZZE_Q)](https://youtu.be/Ld2U66pn2ZM)
+[![Capstone Project](https://i9.ytimg.com/vi_webp/Ld2U66pn2ZM/mqdefault.webp?time=1608573300000&sqp=CPTCg_8F&rs=AOn4CLBHrP0GpFGxO8eir8gjAQgm02bGbQ)](https://youtu.be/Ld2U66pn2ZM)
 
 ## Standout Suggestions
 <p>In this deployment I have enabled <b>Application Insight</b> which helps in logging and monitoring of web service and its related details.</p>
+
+## Future work
+<ul>
+  <li> To check or measure the fairness of the models.</li>
+  <li> Work on conversion of registered model to ONNX format, allowing one to interchange models between various ML frameworks and tools.</li>
+</ul>
